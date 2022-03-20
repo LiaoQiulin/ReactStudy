@@ -1,4 +1,5 @@
 #1 What
+
 ##JSX是js的扩展语法, 本质是js.
 
 ```js
@@ -16,10 +17,13 @@ const element = React.createElement(
     'Hello, world!'
 );
 ```
+
 #2 Why
+
 **有利于构建ui**
 
 #3 内置表达式
+
 ##3.1 使用变量
 ```js
 const name = 'Josh Perez';
@@ -30,6 +34,7 @@ ReactDOM.render(
   document.getElementById('root')
 );
 ```
+
 ##3.2 任何js表达式
 ```js
 function formatName(user) {
@@ -52,6 +57,7 @@ ReactDOM.render(
   document.getElementById('root')
 );
 ```
+
 #4 本身也是表达式
 **可以在if和for循环里,可以赋值给变量, 也可以作为方法入参和返回值**
 ```js
@@ -62,25 +68,32 @@ function getGreeting(user) {
   return <h1>Hello, Stranger.</h1>;
 }
 ```
+
 #5 使用JSX执行属性
+
 ##5.1 双引号字符串属性
 ```js
 const element = <a href="https://www.reactjs.org"> link </a>;
 ```
+
 ##5.2 花括号表达式属性
 ```js
 const element = <img src={user.avatarUrl}></img>;
 ```
+
 ##5.3 属性名 驼峰命名
 JSX更接近js, 而不是html, React DOM习惯驼峰命名属性.
 ```text
 For example, class becomes className in JSX, and tabindex becomes tabIndex.
 ```
+
 #6 使用JSX指定
+
 ##6.1 空标签,/>
 ```js
 const element = <img src={user.avatarUrl} />;
 ```
+
 ##6.2 非空标签
 ```js
 const element = (
@@ -91,6 +104,7 @@ const element = (
 );
 ```
 #7 JSX 防止注入攻击
+
 渲染前进行了转义
 ```js
 const title = response.potentiallyMaliciousInput;
