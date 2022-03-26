@@ -1,10 +1,10 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
 import reportWebVitals from './reportWebVitals';
+// import run from './HandlingEvents'
+// import run from './PreventEvent'
+// import run from './ConstructorThis'
+// import run from './ExperimentalSyntax'
+import run from './ArrowFun'
 
-ReactDOM.render(
-    <h1>Hello, world!</h1>,
-    document.getElementById('root')
-);
+run();
 
 reportWebVitals();
