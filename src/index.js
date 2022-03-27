@@ -1,10 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import reportWebVitals from './reportWebVitals';
+// import run from './StaticVersion';
+// import run from './StateLive';
+import run from './AddInverseDataFlow';
 
-ReactDOM.render(
-    <h1>Hello, world!</h1>,
-    document.getElementById('root')
-);
+run();
+
 
 reportWebVitals();
