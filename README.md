@@ -70,7 +70,7 @@ function getGreeting(user) {
 }
 ```
 
-#5 使用JSX执行属性
+#5 使用JSX指定属性
 
 ##5.1 双引号字符串属性
 ```js
@@ -88,9 +88,9 @@ JSX更接近js, 而不是html, React DOM习惯驼峰命名属性.
 For example, class becomes className in JSX, and tabindex becomes tabIndex.
 ```
 
-#6 使用JSX指定
+#6 JSX孩子标签
 
-##6.1 空标签,/>
+##6.1 空标签 />
 ```js
 const element = <img src={user.avatarUrl} />;
 ```
