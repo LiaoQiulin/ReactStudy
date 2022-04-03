@@ -1,4 +1,5 @@
-#1 What
+# **1 JSX介绍**
+
 
 ##JSX是js的扩展语法, 本质是js.
 
@@ -18,7 +19,7 @@ const element = React.createElement(
 );
 ```
 
-#2 Why
+# **2 JSX使用**
 
 **有利于构建ui**
 
