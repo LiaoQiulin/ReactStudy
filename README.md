@@ -104,7 +104,7 @@ const element = (
   </div>
 );
 ```
-## 2.5 防止注入攻击
+# 3 防止注入攻击
 渲染前对JSX中的嵌入值进行了转义
 ```js
 const title = response.potentiallyMaliciousInput;
