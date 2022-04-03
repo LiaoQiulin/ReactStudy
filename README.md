@@ -1,29 +1,15 @@
-# **1 JSX介绍**
+# 1 JSX介绍
 
+**JSX是JavaScript的语法扩展.** 像HTML一样用来描述UI, 具有 JavaScript 的全部功能.
 
-##JSX是js的扩展语法, 本质是js.
-
-```js
-const element = (
-    <h1 className="greeting">
-        Hello, world!
-    </h1>
-);
-```
-效果与下面一样
-```js
-const element = React.createElement(
-    'h1',
-    {className: 'greeting'},
-    'Hello, world!'
-);
+```jsx
+const element = <h1>Hello, world!</h1>;
 ```
 
-# **2 JSX使用**
 
-**有利于构建ui**
+# 2 JSX使用
 
-# 3 内置表达式
+# 2.1 内置表达式
 
 ##3.1 使用变量
 ```js
