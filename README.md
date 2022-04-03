@@ -1,17 +1,12 @@
 # 1 JSX介绍
-
 **JSX是JavaScript的语法扩展.** 像HTML一样用来描述UI, 具有 JavaScript 的全部功能.
-
 ```jsx
 const element = <h1>Hello, world!</h1>;
 ```
-
-
 # 2 JSX使用
-
-# 2.1 内置表达式
-
-##3.1 使用变量
+## 2.1 内置表达式
+**可以在大括号中使用任何变量和[JavaScript表达式](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Expressions_and_Operators#expressions),比如 ``2 + 2``, ``user.firstName``, 或者 ``formatName(user)``**
+### 2.1.1 变量
 ```js
 const name = 'Josh Perez';
 const element = <h1>Hello, {name}</h1>;
@@ -21,8 +16,7 @@ ReactDOM.render(
   document.getElementById('root')
 );
 ```
-
-##3.2 任何js表达式
+### 2.1.2 js表达式
 ```js
 function formatName(user) {
   return user.firstName + ' ' + user.lastName;
@@ -44,10 +38,35 @@ ReactDOM.render(
   document.getElementById('root')
 );
 ```
-
-#4 本身也是表达式
-
-**可以在if和for循环里,可以赋值给变量, 也可以作为方法入参和返回值**
+## 2.2 本身也是表达式
+**编译后，JSX 表达式成为常规的 JavaScript 函数调用并计算为 JavaScript 对象.**
+```jsx
+const element = (
+  <h1 className="greeting">
+    Hello, world!
+  </h1>
+);
+```
+编译后:
+```js
+const element = React.createElement(
+  'h1',
+  {className: 'greeting'},
+  'Hello, world!'
+);
+```
+``React.createElement()``创建的对象类似:
+```js
+// Note: this structure is simplified
+const element = {
+    type: 'h1',
+    props: {
+        className: 'greeting',
+        children: 'Hello, world!'
+    }
+};
+```
+**这意味着您可以在 if 语句和 for 循环中使用 JSX，将其分配给变量，将其作为参数接受，并从函数中返回**
 ```js
 function getGreeting(user) {
   if (user) {
@@ -56,33 +75,27 @@ function getGreeting(user) {
   return <h1>Hello, Stranger.</h1>;
 }
 ```
-
-#5 使用JSX指定属性
-
-##5.1 双引号字符串属性
+## 2.3 指定属性
+## 2.3.1 双引号字符串属性值
 ```js
 const element = <a href="https://www.reactjs.org"> link </a>;
 ```
-
-##5.2 花括号表达式属性
+## 2.3.2 花括号表达式属性值
 ```js
 const element = <img src={user.avatarUrl}></img>;
 ```
+## 2.3.3 驼峰格式属性名
 
-##5.3 属性名 驼峰命名
-JSX更接近js, 而不是html, React DOM习惯驼峰命名属性.
-```text
-For example, class becomes className in JSX, and tabindex becomes tabIndex.
-```
+* ``class``变为``classNam``
+* ``tabindex``变为``tabIndex``
 
-#6 JSX孩子标签
-
-##6.1 空标签 />
+## 2.4 JSX孩子标签
+和 HTML类似
+## 2.4.1 空标签
 ```js
 const element = <img src={user.avatarUrl} />;
 ```
-
-##6.2 非空标签
+## 2.4.2 非空标签
 ```js
 const element = (
   <div>
@@ -91,9 +104,8 @@ const element = (
   </div>
 );
 ```
-#7 JSX 防止注入攻击
-
-渲染前进行了转义
+## 2.5 防止注入攻击
+渲染前对JSX中的嵌入值进行了转义
 ```js
 const title = response.potentiallyMaliciousInput;
 // This is safe:
