@@ -23,7 +23,7 @@ const element = React.createElement(
 
 **有利于构建ui**
 
-#3 内置表达式
+# 3 内置表达式
 
 ##3.1 使用变量
 ```js
