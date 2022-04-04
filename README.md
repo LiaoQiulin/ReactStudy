@@ -1,4 +1,4 @@
-# 1 react元素(``虚拟dom``)介绍
+# 1 react元素介绍
 * 元素描述了浏览器要展示的内容
 * 相比浏览器dom, react元素是一个普通的js对象, 更容易创建
 * ReactDom负责按照React元素的描述更新浏览器dom
