@@ -1,33 +1,28 @@
-# 1 处理事件
+#  处理事件
 
+1. react使用驼峰命名, 而不是小写.
+2. react传递函数作为时间处理, 而不是字符串
 **html**
-
 ```html
 <button onclick="activateLasers()">
   Activate Lasers
 </button>
 ```
-
 **react**
-
 ```jsx
 <button onClick={activateLasers}>
   Activate Lasers
 </button>
 ```
-
-# 2 阻断默认行为: PreventEvent.js
+3. react不能返回 false 以防止默认行为,必须显式调用 preventDefault: PreventEvent.js
 
 **html**
-
 ```html
 <form onsubmit="console.log('You clicked submit.'); return false">
     <button type="submit">Submit</button>
 </form>
 ```
-
 **react**
-
 ```jsx
 function Form() {
     function handleSubmit(e) {
@@ -43,7 +38,7 @@ function Form() {
 }
 ```
 
-# 3 e
+4.  e
 
 
 **html**
