@@ -127,7 +127,7 @@ class Clock extends React.Component {
 }
 ```
 
-# 2. 正确使用状态
+## 2. 正确使用状态
 
 ### 2.1 不要直接修改状态
 
@@ -207,7 +207,7 @@ componentDidMount()
 
 posts, comments分别独立更新, 当更新posts的时候, comments是旧的对象
 
-# 3. 数据向下流动
+## 3. 数据向下流动
 
 1. 组件可以选择将其状态作为道具传递给其子组件
 2. 组件将在其 props 中接收日期，并且不知道它是来自父组件的状态、属性 还是手动输入的
