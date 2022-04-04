@@ -8,7 +8,7 @@ export default ()=>{
             return <h1>Hello, {this.props.name}</h1>;
         }
     }
-    const element = <Welcome name="Sara" />;
+    const element = <Welcome name="Sara: Class" />;
 
     ReactDOM.render(
         element,
