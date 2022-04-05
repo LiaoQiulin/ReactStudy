@@ -21,7 +21,8 @@ export default () => {
 
     ReactDOM.render(
         // Try changing to isLoggedIn={true}:
-            <Greeting isLoggedIn={false}/>,
+        //     <Greeting isLoggedIn={false}/>,
+            <Greeting isLoggedIn={true}/>,
         document.getElementById('root')
     );
 }
