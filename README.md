@@ -1,6 +1,6 @@
-# 条件渲染: ``ConditionRendering.js``
+# 条件渲染
 
-## 1 根据属性条件return
+## 1 根据属性条件return: ``ConditionRendering.js``
 ```jsx
 function Greeting(props) {
   const isLoggedIn = props.isLoggedIn;
@@ -16,9 +16,7 @@ ReactDOM.render(
   document.getElementById('root')
 );
 ```
-
 ## 2 元素变量: ``ConditionRendering.js``
-
 ```jsx
 if (isLoggedIn) {
       button = <LogoutButton onClick={this.handleLogoutClick} />;
@@ -26,9 +24,7 @@ if (isLoggedIn) {
       button = <LoginButton onClick={this.handleLoginClick} />;
     }
 ```
-
 ## 3 内联表达式 ``&&``操作符作为If: ``InlineIf.js``
-
 ```jsx
 {unreadMessages.length > 0 &&
         <h2>
@@ -36,9 +32,7 @@ if (isLoggedIn) {
         </h2>
       }
 ```
-
 ## 4 内联表达式 ``condition ? true : false``操作符作为If-Else: ``InlineIfElse.js``
-
 ```jsx
 render() {
             const isLoggedIn = this.state.isLoggedIn;
@@ -53,9 +47,7 @@ render() {
             );
         }
 ```
-
 ## 5 不渲染: ``PreventingRendering.js``
-
 ```jsx
 function WarningBanner(props) {
   if (!props.warn) {
