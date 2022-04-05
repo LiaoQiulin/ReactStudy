@@ -48,6 +48,7 @@ const todoItems = todos.map((todo, index) =>
 ```
 
 ## 5 使用键提取组件
+>键仅在周围数组的上下文中才有意义
 
 错误使用:
 
