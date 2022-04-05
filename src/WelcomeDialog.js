@@ -30,6 +30,13 @@ export default () => {
                 message="Thank you for visiting our spacecraft!" />
         );
     }
+    // function LogDialog() {
+    //     return (
+    //         <Dialog
+    //             title="Log"
+    //             message="Log!" />
+    //     );
+    // }
 
     ReactDOM.render(
         <WelcomeDialog/>,
