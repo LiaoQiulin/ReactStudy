@@ -15,7 +15,7 @@ console.log(doubled);
 
 ## 4 keys
 
-### 4.1 Keys 帮组react识别item的变更,新增,删除, 需要给item元素一个稳定的标识
+1. > Keys 帮组react识别item的变更,新增,删除, 需要给item元素一个稳定的标识
 
 ```jsx
 const numbers = [1, 2, 3, 4, 5];
@@ -26,7 +26,7 @@ const listItems = numbers.map((number) =>
 );
 ```
 
-### 4.2 最佳实践是取一个代表数据元素的唯一标识, 比如数据的唯一id
+2. > 最佳实践是取一个代表数据元素的唯一标识, 比如数据的唯一id
 
 ```jsx
 const todoItems = todos.map((todo) =>
@@ -36,7 +36,7 @@ const todoItems = todos.map((todo) =>
 );
 ```
 
-### 4.3 如果没有一个稳定的id, 可以使用数组元素的索引id
+3. > 如果没有一个稳定的id, 可以使用数组元素的索引id
 
 ```jsx
 const todoItems = todos.map((todo, index) =>
@@ -47,7 +47,7 @@ const todoItems = todos.map((todo, index) =>
 );
 ```
 
-## 5 使用键提取组件
+### 4.1 使用键提取组件
 >键仅在周围数组的上下文中才有意义
 
 错误使用:
@@ -100,11 +100,11 @@ function NumberList(props) {
 }
 ```
 
-## 6. 键只能在兄弟姐妹中唯一: ``UniqueAmongSiblings.js``
+### 4.2  键在兄弟姐妹中必须唯一: ``UniqueAmongSiblings.js``
 
 
 
-## 7 在 JSX 中嵌入 map()
+### 4.3 在 JSX 中嵌入 map()
 
 ```jsx
 function NumberList(props) {
