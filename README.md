@@ -99,11 +99,9 @@ function NumberList(props) {
 }
 ```
 
-### 6. 键只能在兄弟姐妹中唯一
+## 6. 键只能在兄弟姐妹中唯一: ``UniqueAmongSiblings.js``
 
-```jsx
 
-```
 
 ## 7 在 JSX 中嵌入 map()
 
