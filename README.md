@@ -9,20 +9,13 @@ console.log(doubled);
 //[2, 4, 6, 8, 10]
 ```
 
-## 2 列表组件: ``BasicListComponent.js``
+## 2 渲染多个组件: ``MultipleComponents.js``
 
-```jsx
-  const listItems = numbers.map((number) =>
-    <li>{number}</li>
-  );
-  return (
-    <ul>{listItems}</ul>
-  );
-```
+## 3 基本列表组件: ``BasicListComponent.js``
 
-## 3 keys
+## 4 keys
 
-### 3.1 Keys 帮组react识别item的变更,新增,删除, 需要给item元素一个稳定的标识
+### 4.1 Keys 帮组react识别item的变更,新增,删除, 需要给item元素一个稳定的标识
 
 ```jsx
 const numbers = [1, 2, 3, 4, 5];
@@ -33,7 +26,7 @@ const listItems = numbers.map((number) =>
 );
 ```
 
-### 3.2 最佳实践是取一个代表数据元素的唯一标识, 比如数据的唯一id
+### 4.2 最佳实践是取一个代表数据元素的唯一标识, 比如数据的唯一id
 
 ```jsx
 const todoItems = todos.map((todo) =>
@@ -43,7 +36,7 @@ const todoItems = todos.map((todo) =>
 );
 ```
 
-### 3.3 如果没有一个稳定的id, 可以使用数组元素的索引id
+### 4.3 如果没有一个稳定的id, 可以使用数组元素的索引id
 
 ```jsx
 const todoItems = todos.map((todo, index) =>
@@ -54,7 +47,7 @@ const todoItems = todos.map((todo, index) =>
 );
 ```
 
-### 3.4 key应该贴近数组使用
+## 5 使用键提取组件
 
 错误使用:
 
@@ -106,28 +99,13 @@ function NumberList(props) {
 }
 ```
 
-### 3.5 key必须在兄弟元素中唯一
-
-### 3.5 使用位置
-
-声明变量
+### 6. 键只能在兄弟姐妹中唯一
 
 ```jsx
-function NumberList(props) {
-  const numbers = props.numbers;
-  const listItems = numbers.map((number) =>
-    <ListItem key={number.toString()}
-              value={number} />
-  );
-  return (
-    <ul>
-      {listItems}
-    </ul>
-  );
-}
+
 ```
 
-内置表达式
+## 7 在 JSX 中嵌入 map()
 
 ```jsx
 function NumberList(props) {
