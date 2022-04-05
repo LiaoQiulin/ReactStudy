@@ -28,11 +28,11 @@
 
 ``With a controlled component``
 > 使用受控组件，输入的值始终由 React 状态驱动。虽然这意味着您必须键入更多代码，但您现在也可以将值传递给其他 UI 元素，或从其他事件处理程序中重置它。
-## 1.1 textarea 标签: ``textarea.js``
+### 1.1 textarea 标签: ``textarea.js``
 
-## 1.2 select 标签: ``textarea.js``
+### 1.2 select 标签: ``textarea.js``
 
-## 1.3 处理多个输入: ``MultipleInputs.js``
+### 1.3 处理多个输入: ``MultipleInputs.js``
 
 es6 语法
 
@@ -49,7 +49,7 @@ var partialState = {};
 partialState[name] = value;
 this.setState(partialState);
 ```
-# 2 受控组件的替代品:  [不受控制组件](https://reactjs.org/docs/uncontrolled-components.html)
+## 2 受控组件的替代品:  [不受控制组件](https://reactjs.org/docs/uncontrolled-components.html)
 
 > 使用受控组件有时会很乏味，因为您需要为数据可以更改的每一种方式编写一个事件处理程序，并通过 React 组件管道所有输入状态。当您将预先存在的代码库转换为 React 或将 React 应用程序与非 React 库集成时，这可能会变得特别烦人。
 
@@ -57,5 +57,5 @@ this.setState(partialState);
 
 
 
-# 3 表单解决方案: [``Formik``](https://formik.org/docs/overview)
+## 3 表单解决方案: [``Formik``](https://formik.org/docs/overview)
 
