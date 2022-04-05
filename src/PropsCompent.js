@@ -20,10 +20,10 @@ export default () => {
         return (
             <SplitPane
                 left={
-                    <button>Left</button>
+                    <button>Left:Contacts</button>
                 }
                 right={
-                    <button>right</button>
+                    <button>right:Chat</button>
                 } />
         );
     }
