@@ -1,6 +1,6 @@
 # 条件渲染
 
-## 1 根据属性条件return: ``ConditionRendering.js``
+## 1 if-else return: ``ConditionRendering.js``
 ```jsx
 function Greeting(props) {
   const isLoggedIn = props.isLoggedIn;
@@ -16,7 +16,7 @@ ReactDOM.render(
   document.getElementById('root')
 );
 ```
-## 2 元素变量: ``ConditionRendering.js``
+## 2 元素变量: ``ElementVariables.js``
 ```jsx
 if (isLoggedIn) {
       button = <LogoutButton onClick={this.handleLogoutClick} />;
