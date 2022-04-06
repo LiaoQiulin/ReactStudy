@@ -14,8 +14,12 @@
 
 ## 3 识别 UI 状态的最小（但完整）表示
 
-* The search text the user has entered
-* The value of the checkbox
+**符合以下三种情况之一，它可能不是状态**
+
+``Ask three questions``
+>1. 它是通过 props 从父级传入的吗?
+>2. 它会随着时间的推移保持不变吗？
+>3. 您可以根据组件中的任何其他状态或道具来计算它吗?
 
 ## 4 确定您状态所在组件: ``StateLive.js``
 
