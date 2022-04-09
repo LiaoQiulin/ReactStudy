@@ -1,6 +1,47 @@
 #  使用 State Hook
 
 ## 1. 等效类示例
+>我们将通过将此代码与等效的类示例进行比较来开始学习 Hooks。
+1. function
+```jsx
+import React, { useState } from 'react';
+
+function Example() {
+    // Declare a new state variable, which we'll call "count"
+    const [count, setCount] = useState(0);
+
+    return (
+        <div>
+            <p>You clicked {count} times</p>
+            <button onClick={() => setCount(count + 1)}>
+                Click me
+            </button>
+        </div>
+    );
+}
+```
+2. class
+```jsx
+class Example extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            count: 0
+        };
+    }
+
+    render() {
+        return (
+            <div>
+                <p>You clicked {this.state.count} times</p>
+                <button onClick={() => this.setState({ count: this.state.count + 1 })}>
+                    Click me
+                </button>
+            </div>
+        );
+    }
+}
+```
 ## 2. Hooks 和 函数组件
 > Hooks 之前, ``函数组件``也叫 ``无状态组件``. 现在 Hooks将状态引入``函数组件``, 所以最好叫``函数组件``
 ## 3. Hook是什么
