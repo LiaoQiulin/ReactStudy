@@ -36,30 +36,21 @@ export default () => {
 
     class ProductTable extends React.Component {
         render() {
-            const filterText = this.props.filterText;
-            const inStockOnly = this.props.inStockOnly;
-
             const rows = [];
             let lastCategory = null;
 
             this.props.products.forEach((product) => {
-                if (product.name.indexOf(filterText) === -1) {
-                    return;
-                }
-                if (inStockOnly && !product.stocked) {
-                    return;
-                }
                 if (product.category !== lastCategory) {
                     rows.push(
                         <ProductCategoryRow
                             category={product.category}
-                            key={product.category}/>
+                            key={product.category} />
                     );
                 }
                 rows.push(
                     <ProductRow
                         product={product}
-                        key={product.name}/>
+                        key={product.name} />
                 );
                 lastCategory = product.category;
             });
@@ -80,19 +71,11 @@ export default () => {
 
     class SearchBar extends React.Component {
         render() {
-            const filterText = this.props.filterText;
-            const inStockOnly = this.props.inStockOnly;
-
             return (
                 <form>
-                    <input
-                        type="text"
-                        placeholder="Search..."
-                        value={filterText} />
+                    <input type="text" placeholder="Search..." />
                     <p>
-                        <input
-                            type="checkbox"
-                            checked={inStockOnly} />
+                        <input type="checkbox" />
                         {' '}
                         Only show products in stock
                     </p>
@@ -102,26 +85,11 @@ export default () => {
     }
 
     class FilterableProductTable extends React.Component {
-        constructor(props) {
-            super(props);
-            this.state = {
-                filterText: '',
-                inStockOnly: false
-            };
-        }
-
         render() {
             return (
                 <div>
-                    <SearchBar
-                        filterText={this.state.filterText}
-                        inStockOnly={this.state.inStockOnly}
-                    />
-                    <ProductTable
-                        products={this.props.products}
-                        filterText={this.state.filterText}
-                        inStockOnly={this.state.inStockOnly}
-                    />
+                    <SearchBar />
+                    <ProductTable products={this.props.products} />
                 </div>
             );
         }
@@ -138,7 +106,7 @@ export default () => {
     ];
 
     ReactDOM.render(
-        <FilterableProductTable products={PRODUCTS}/>,
+        <FilterableProductTable products={PRODUCTS} />,
         document.getElementById('root')
     );
 }
