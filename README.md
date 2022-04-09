@@ -1,26 +1,19 @@
-# 新建一个react app
+#  Hooks介绍
 
-```jsx
-npx create-react-app my-app
-cd my-app
-npm start
-```
+让``函数组件``具备``类组件``的能力.
 
-# Hello World
-* public
-  * index.html
-* src
-  * index.js
-  * reportWebVitals.js
-* .gitignore //git忽略文件
-* package.json // webpack配置
-* package-lock.json
+> Hooks 是 React 16.8 中的新增功能。它们让您无需编写类即可使用状态和其他 React 功能。
+## 1 没有重大变化
+* 完全选择性加入
+* 100% 向后兼容
+* v16.8.0 生效
 
-***
+1. **没有计划从 React 中删除类。**
+2. **Hooks 不会取代你对 React 概念的了解。**
 
-1. ``index.html`` //html入口
-2. ``index.js`` //js入口
-3. ``reportWebVitals.js`` //热加载,监控相关
-4. ``.gitignore`` //git忽略文件
-5. ``package.json`` // 记录当前项目所依赖模块的版本信息
-6. ``package-lock.json`` // 记录了node_modules目录下所有模块的具体来源和版本号以及其他的信息
+## 2 动机
+
+1. 组件之间很难重用有状态的逻辑
+2. 复杂的组件变得难以理解
+3. 类让人和机器都难以理解
+
