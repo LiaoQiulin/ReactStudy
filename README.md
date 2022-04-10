@@ -1,41 +1,17 @@
+# React从入门到精通
 
-# react 介绍
-
-**react是一个构建用户界面的javascript库**
-
-* 声明式
-* 基于组件
-* 学习一次, 到处使用
-
-## 1 声明式
-
-* 传统命令式编程
-```js
-//1 定义标签
-<btn>内容</btn>
-
-//2 找到标签, 让标签渲染新的内容
-data=fetch()
-findBtn().setValue(data)
-```
-
-* 声明式
-
-```js
-//1 定义标签, 绑定数据变量
-data="内容"
-<btn>{data}</btn>
-
-//2 变更数据
-data=fetch()
-```
-
-## 2 基于组件
-
-构建比较独立的组件, 组合成复杂的ui
-
-## 3 学习一次, 到处使用
-
-移动端跨平台开发框架: `reactnative`
-
-
+## 1. 动机
+* web核心技术: React
+* 国外和大厂主流web框架
+## 2. 内容
+1. react 入门
+2. react 高阶
+3. react hooks
+4. 其他: react-router, axios 等等
+   ![](https://raw.githubusercontent.com/qiulin1990/image/main/20220410212127.png)
+## 3. 特点
+结合官网学习
+![](https://raw.githubusercontent.com/qiulin1990/image/main/20220410213008.png)
+## 4. Github 课件使用方便
+![](https://raw.githubusercontent.com/qiulin1990/image/main/20220410213613.png)
+## 5. 老视频会动态优化替换
