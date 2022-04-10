@@ -2,25 +2,8 @@
 
 ## 1. 等效类示例
 >我们将通过将此代码与等效的类示例进行比较来开始学习 Hooks。
-1. function
-```jsx
-import React, { useState } from 'react';
 
-function Example() {
-    // Declare a new state variable, which we'll call "count"
-    const [count, setCount] = useState(0);
-
-    return (
-        <div>
-            <p>You clicked {count} times</p>
-            <button onClick={() => setCount(count + 1)}>
-                Click me
-            </button>
-        </div>
-    );
-}
-```
-2. class
+1. class
 ```jsx
 class Example extends React.Component {
     constructor(props) {
@@ -40,6 +23,25 @@ class Example extends React.Component {
             </div>
         );
     }
+}
+```
+2. function
+
+```jsx
+import React, { useState } from 'react';
+
+function Example() {
+    // Declare a new state variable, which we'll call "count"
+    const [count, setCount] = useState(0);
+
+    return (
+        <div>
+            <p>You clicked {count} times</p>
+            <button onClick={() => setCount(count + 1)}>
+                Click me
+            </button>
+        </div>
+    );
 }
 ```
 ## 2. Hooks 和 函数组件
