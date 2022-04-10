@@ -7,7 +7,7 @@ export default () => {
         const [count, setCount] = useState(0);
 
         useEffect(() => {
-            console.log("组件初始化或更新")
+                console.log("组件初始化或更新")
         });
 
         return (
