@@ -1,5 +1,5 @@
 import ReactDOM from 'react-dom';
-import React, {useState,useEffect} from 'react';
+import React, {useState, useEffect} from 'react';
 
 export default () => {
 
@@ -7,9 +7,9 @@ export default () => {
         const [count, setCount] = useState(0);
 
         useEffect(() => {
-            console.log("组件初始化或更新")
-            return function (){
-                console.log("组件销毁")
+            console.log("组件初始化或更新" + count)
+            return function () {
+                console.log("组件销毁" + count)
             }
         });
 
