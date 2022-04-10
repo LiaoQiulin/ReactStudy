@@ -1,7 +1,8 @@
-import React from 'react';
 import ReactDOM from 'react-dom';
+import React, {useState,useEffect} from 'react';
 
 export default () => {
+
     class Example extends React.Component {
         constructor(props) {
             super(props);
@@ -10,11 +11,21 @@ export default () => {
             };
         }
 
+        componentDidMount() {
+            console.log("组件初始化")
+        }
+        componentDidUpdate() {
+            console.log("组件更新")
+        }
+        componentWillUnmount() {
+            console.log("组件销毁")
+        }
+
         render() {
             return (
                 <div>
                     <p>You clicked {this.state.count} times</p>
-                    <button onClick={() => this.setState({count: this.state.count + 1})}>
+                    <button onClick={() => this.setState({ count: this.state.count + 1 })}>
                         Click me
                     </button>
                 </div>

@@ -1,121 +1,41 @@
-#  使用 State Hook
+#  useEffect
 
-## 1. 等效类示例
->我们将通过将此代码与等效的类示例进行比较来开始学习 Hooks。
-
-1. class
-```jsx
-class Example extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            count: 0
-        };
-    }
-
-    render() {
-        return (
-            <div>
-                <p>You clicked {this.state.count} times</p>
-                <button onClick={() => this.setState({ count: this.state.count + 1 })}>
-                    Click me
-                </button>
-            </div>
-        );
-    }
-}
-```
-2. function
+## 1. 无返回函数的useEffect ``EffectsWithoutCleanup.js``
 
 ```jsx
-import React, { useState } from 'react';
+useEffect(() => {
+    console.log("组件初始化或更新")
+});
+```
+### 1.1 useEffect 有什么作用？
+>通过使用这个 Hook，你告诉 React 你的组件需要在渲染之后做一些事情。
+### 1.2 为什么在组件内部调用 useEffect？
+>将 useEffect 放在组件中可以让我们直接从效果中访问计数状态变量（或任何属性）。
+### 1.3 每次渲染后都会运行 useEffect 吗？
+>是的！默认情况下，它会在第一次渲染后和每次更新后运行。
 
-function Example() {
-    // Declare a new state variable, which we'll call "count"
-    const [count, setCount] = useState(0);
-
-    return (
-        <div>
-            <p>You clicked {count} times</p>
-            <button onClick={() => setCount(count + 1)}>
-                Click me
-            </button>
-        </div>
-    );
-}
-```
-## 2. Hooks 和 函数组件
-> Hooks 之前, ``函数组件``也叫 ``无状态组件``. 现在 Hooks将状态引入``函数组件``, 所以最好叫``函数组件``
-## 3. Hook是什么
-### 3.1 Hook是什么
-> Hook 是一种特殊函数，可让您“挂钩” React 功能
-### 3.2 什么使用Hook
-> 如果您编写了一个函数组件并意识到您需要向它添加一些状态，那么之前您必须将它转换为一个类。现在您可以在现有的函数组件中使用 Hook。
-## 4. 声明一个状态变量
-1. class
+## 2. 有返回函数的useEffect  ``EffectsWithCleanup.js``
+### 2.1 为什么我们从效果中返回一个函数？
+> 这是效果的可选清理机制。每个效果都可能返回一个在它之后进行清理的函数。
+### 2.2 React 究竟何时清理效果？
+> React 在组件卸载时执行清理。然而，正如我们之前所了解的，效果会为每次渲染运行，而不仅仅是一次。这就是为什么 React 还会在下次运行效果之前清理上一次渲染中的效果。
+## 3 回顾
+## 4 使用效果的技巧
+### 4.1 使用多个效果来区分关注点
+### 4.2 通过跳过效果优化性能
+>将数组作为可选的第二个参数传递给 useEffect
 ```jsx
-class Example extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      count: 0
-    };
-  }
+        useEffect(() => {
+            console.log("组件初始化或更新: 空数组")
+            return function (){
+                console.log("组件销毁: 空数组")
+            }
+        },[]);
+       useEffect(() => {
+            console.log("组件初始化或更新: count")
+            return function (){
+                console.log("组件销毁: count")
+            }
+        },[count]);
 ```
-2. function
-```jsx
-import React, { useState } from 'react';
-
-function Example() {
-  // Declare a new state variable, which we'll call "count"
-  const [count, setCount] = useState(0);
-```
-### 4.1 调用 useState 有什么作用？
->它声明了一个“状态变量”。
-### 4.2 我们将什么作为参数传递给 useState？
->useState() Hook 的唯一参数是初始状态。
-### 4.3 useState 返回什么？
->它返回一对值：当前状态和更新它的函数。
-## 5. 读取状态
-1. class
-```jsx
-  <p>You clicked {this.state.count} times</p>
-```
-2. function
-```jsx
-  <p>You clicked {count} times</p>
-```
-## 6. 更新状态
-1. class
-```jsx
-<button onClick={() => this.setState({ count: this.state.count + 1 })}>
-    Click me
-</button>
-```
-2. function
-```jsx
-<button onClick={() => setCount(count + 1)}>
-    Click me
-</button>
-```
-## 7 回顾
-### 7.1 方括号是什么意思？
-```jsx
- const [fruit, setFruit] = useState('banana');
-```
->左边的名字不是 React API 的一部分。您可以命名自己的状态变量
-```jsx
-  var fruitStateVariable = useState('banana'); // Returns a pair
-  var fruit = fruitStateVariable[0]; // First item in a pair
-  var setFruit = fruitStateVariable[1]; // Second item in a pair
-```
->当我们用 useState 声明一个状态变量时，它返回一个对——一个包含两个项目的数组。第一项是当前值，第二项是让我们更新它的函数。使用 [0] 和 [1] 访问它们有点令人困惑，因为它们具有特定的含义。这就是我们使用数组解构的原因。
-### 7.2 使用多个状态变量
-```
-function ExampleWithManyStates() {
-  // Declare multiple state variables!
-  const [age, setAge] = useState(42);
-  const [fruit, setFruit] = useState('banana');
-  const [todos, setTodos] = useState([{ text: 'Learn Hooks' }]);
-```
->将状态变量声明为一对 [something, setSomething] 也很方便，因为如果我们想使用多个状态变量，它可以让我们为不同的状态变量赋予不同的名称
+**数组中的值没有变动, 重新渲染时,会跳过此效果.**

@@ -1,11 +1,14 @@
 import ReactDOM from 'react-dom';
-import React, {useState} from 'react';
+import React, {useState,useEffect} from 'react';
 
 export default () => {
 
     function Example() {
-        // Declare a new state variable, which we'll call "count"
         const [count, setCount] = useState(0);
+
+        useEffect(() => {
+            console.log("组件初始化或更新")
+        });
 
         return (
             <div>
