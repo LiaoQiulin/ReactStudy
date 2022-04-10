@@ -3,6 +3,7 @@
 ## 1. 动机
 * web核心技术: React
 * 国外和大厂主流web框架
+* react资料不够权威和系统
 ## 2. 内容
 1. react 入门
 2. react 高阶
