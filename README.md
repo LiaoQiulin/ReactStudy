@@ -1,6 +1,6 @@
 #  useEffect
 
-## 1. 无返回函数的useEffect ``EffectsWithoutCleanup.js``
+## 1. 无需清理的效果 ``EffectsWithoutCleanup.js``
 
 ```jsx
 useEffect(() => {
@@ -14,7 +14,7 @@ useEffect(() => {
 ### 1.3 每次渲染后都会运行 useEffect 吗？
 >是的！默认情况下，它会在第一次渲染后和每次更新后运行。
 
-## 2. 有返回函数的useEffect  ``EffectsWithCleanup.js``
+## 2. 带清理的效果  ``EffectsWithCleanup.js``
 ### 2.1 为什么我们从效果中返回一个函数？
 > 这是效果的可选清理机制。每个效果都可能返回一个在它之后进行清理的函数。
 ### 2.2 React 究竟何时清理效果？
