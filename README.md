@@ -1,5 +1,5 @@
 # Hooks使用规则
-
+>Hooks 是 JavaScript 函数，但使用时需要遵循两个规则
 ## 1. 仅在顶层调用 Hooks
 >不要在循环、条件或嵌套函数中调用 Hook。
 >
