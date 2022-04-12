@@ -8,9 +8,9 @@ function Form() {
     const [name, setName] = useState('Mary');
 
     // 2. Use an effect for persisting the form
-    useEffect(function persistForm() {
-        localStorage.setItem('formData', name);
-    });
+    // useEffect(function persistForm() {
+    //     localStorage.setItem('formData', name);
+    // });
     // if (name !== '') {
     //     useEffect(function persistForm() {
     //         localStorage.setItem('formData', name);
