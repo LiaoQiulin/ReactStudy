@@ -1,12 +1,12 @@
-# Hooks使用规则
->Hooks 是 JavaScript 函数，但使用时需要遵循两个规则
-## 1. 仅在顶层调用 Hooks
->不要在循环、条件或嵌套函数中调用 Hook。
->
-``So how does``
->那么 React 是如何知道哪个 state 对应哪个 useState 调用的呢？答案是 React 依赖于 Hooks 的调用顺序。
-## 2. 仅从 React 函数调用 Hooks
+# 自定义Hooks
+>自定义 Hooks 可以让您将组件逻辑提取到可重用的函数中
 
->不要从常规 JavaScript 函数中调用 Hooks。相反，您可以：
-1. 从 React 函数组件调用 Hooks。
-2. 从自定义 Hooks 调用 Hooks
+## 1. 使用自定义Hooks
+### 1.1 此代码``useFriendStatus``是否等同于原始示例 ``normal.js``？ 
+> 是的
+### 1.2 我必须以“use”开头来命名我的自定义 Hooks 吗？
+> 请这么做
+### 1.3 使用相同 Hook 的两个组件是否共享状态？
+> 否
+### 1.4 自定义 Hook 如何获得孤立状态？
+> 因为我们直接调用 useFriendStatus，所以从 React 的角度来看，我们的组件只调用了 useState 和 useEffect。而且正如我们前面所了解的，我们可以在一个组件中多次调用 useState 和 useEffect ，它们将是完全独立的。
