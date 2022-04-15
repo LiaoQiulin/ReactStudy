@@ -1,5 +1,5 @@
 import ReactDOM from "react-dom";
-import React, {useEffect, useState} from "react";
+import React, {useEffect, useState, useLayoutEffect} from "react";
 import ChatAPI from './ChatAPI'
 
 function useFriendStatus(friendID) {
@@ -43,10 +43,20 @@ export default () => {
         );
     }
 
+    function Black(props) {
+
+  
+        return <>{props.children}</>
+    }
+
+    class A extends React.Component{
+
+    }
+
     ReactDOM.render(
-        <>
-            <FriendStatus friend={{id: 2}}/>
-            <FriendListItem friend={{id: 1, name: 'ls'}}/>
+        <><Black> <FriendStatus friend={{id: 2}}/>
+            <FriendListItem friend={{id: 1, name: 'ls'}}/></Black>
+
         </>,
         document.getElementById('root')
     );
