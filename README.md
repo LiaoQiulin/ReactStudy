@@ -81,3 +81,5 @@ const memoizedCallback = useCallback(
 ```jsx
 const memoizedValue = useMemo(() => computeExpensiveValue(a, b), [a, b]);
 ```
+## 7 useRef
+>useRef 返回一个可变 ref 对象，其 .current 属性初始化为传递的参数 (initialValue)。返回的对象将在组件的整个生命周期内持续存在。
