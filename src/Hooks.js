@@ -1,4 +1,4 @@
-import React, {useMemo} from "react";
+import React, {useMemo, useState} from "react";
 import ReactDOM from "react-dom";
 
 export default () => {
@@ -106,48 +106,36 @@ export default () => {
 
     }
 
-    class FilterableProductTable extends React.Component {
-        constructor(props) {
-            super(props);
-            this.state = {
-                filterText: '',
-                inStockOnly: false
-            };
+    function FilterableProductTable(props){
 
-            this.handleFilterTextChange = this.handleFilterTextChange.bind(this);
-            this.handleInStockChange = this.handleInStockChange.bind(this);
+        let [filterText,setFilterText] = useState('');
+        let [inStockOnly,setInStockOnly] = useState(false);
+
+        function handleFilterTextChange(filterText) {
+            setFilterText(filterText);
         }
 
-        handleFilterTextChange(filterText) {
-            this.setState({
-                filterText: filterText
-            });
+        function handleInStockChange(inStockOnly) {
+            setInStockOnly(inStockOnly)
         }
-
-        handleInStockChange(inStockOnly) {
-            this.setState({
-                inStockOnly: inStockOnly
-            })
-        }
-
-        render() {
-            return (
-                <div>
-                    <SearchBar
-                        filterText={this.state.filterText}
-                        inStockOnly={this.state.inStockOnly}
-                        onFilterTextChange={this.handleFilterTextChange}
-                        onInStockChange={this.handleInStockChange}
-                    />
-                    <ProductTable
-                        products={this.props.products}
-                        filterText={this.state.filterText}
-                        inStockOnly={this.state.inStockOnly}
-                    />
-                </div>
-            );
-        }
+        return (
+            <div>
+                <SearchBar
+                    filterText={filterText}
+                    inStockOnly={inStockOnly}
+                    onFilterTextChange={handleFilterTextChange}
+                    onInStockChange={handleInStockChange}
+                />
+                <ProductTable
+                    products={props.products}
+                    filterText={filterText}
+                    inStockOnly={inStockOnly}
+                />
+            </div>
+        );
     }
+
+
 
 
     const PRODUCTS = [

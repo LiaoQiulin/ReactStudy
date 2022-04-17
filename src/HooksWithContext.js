@@ -32,7 +32,7 @@ export default () => {
     }
 
 
-    function ProductTable(props) {
+    function ProductTable() {
         let data = useData();
 
         const filterText = data.filterText;
@@ -77,7 +77,7 @@ export default () => {
     }
 
 
-    function SearchBar(props) {
+    function SearchBar() {
         let data = useData();
 
         function handleFilterTextChange(e) {
@@ -111,7 +111,7 @@ export default () => {
 
     }
 
-    function FilterableProductTable(props) {
+    function FilterableProductTable() {
         return (
             <div>
                 <SearchBar/>
@@ -121,7 +121,7 @@ export default () => {
 
     }
 
-
+    //1. 创建上下文
     let DataContext = React.createContext(null);
 
     function ContextProvider(props) {
@@ -138,10 +138,12 @@ export default () => {
             {category: 'Electronics', price: '$199.99', stocked: true, name: 'Nexus 7'}
         ];
         let value = {products, filterText, setFilterText, inStockOnly, setInStockOnly}
+        // 2 包裹需要共享数据的组件
         return <DataContext.Provider value={value}>{props.children}</DataContext.Provider>
     }
 
     function useData() {
+        //3 子组件中调用共享的数据
         return React.useContext(DataContext);
     }
 
