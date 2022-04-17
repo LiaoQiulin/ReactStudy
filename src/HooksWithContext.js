@@ -78,7 +78,7 @@ export default () => {
 
 
     function SearchBar() {
-        let data = useData();
+        let data = React.useContext(DataContext);
 
         function handleFilterTextChange(e) {
             data.setFilterText(e.target.value);
@@ -104,7 +104,7 @@ export default () => {
                         onChange={handleInStockChange}
                     />
                     {' '}
-                    Only show products in stock
+                    Only22 show products in stock
                 </p>
             </form>
         );
@@ -149,7 +149,9 @@ export default () => {
 
 
     ReactDOM.render(
-        <ContextProvider><FilterableProductTable/></ContextProvider>,
+        <ContextProvider>
+            <FilterableProductTable/>
+        </ContextProvider>,
         document.getElementById('root')
     );
 }

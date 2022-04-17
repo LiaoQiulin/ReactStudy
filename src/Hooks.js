@@ -105,14 +105,13 @@ export default () => {
         );
 
     }
-
     function FilterableProductTable(props){
-
         let [filterText,setFilterText] = useState('');
         let [inStockOnly,setInStockOnly] = useState(false);
 
-        function handleFilterTextChange(filterText) {
-            setFilterText(filterText);
+
+       function  handleFilterTextChange(filterText) {
+           setFilterText(filterText);
         }
 
         function handleInStockChange(inStockOnly) {
