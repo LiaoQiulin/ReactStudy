@@ -120,7 +120,9 @@ let params = useParams();
 ```
 
 ## 10 活动链接
+
 > <NavLink className={({ isActive }) => isActive ? "red" : "blue"} />
+
 ```jsx
 <NavLink
     style={({isActive}) => {
@@ -135,4 +137,24 @@ let params = useParams();
 >
     {invoice.name}
 </NavLink>
+```
+
+## 11 搜索参数
+>  "/login?success=1" or "/shoes?brand=nike&sort=asc&sortby=price"
+
+#### 1. 引入
+```jsx
+let [searchParams, setSearchParams] = useSearchParams();
+```
+#### 2. 设置
+```jsx
+if (filter) {
+    setSearchParams({filter});
+} else {
+    setSearchParams({});
+}
+```
+#### 3. 获取
+```jsx
+let filter = searchParams.get("filter");
 ```
