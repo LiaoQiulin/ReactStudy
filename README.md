@@ -42,7 +42,9 @@
 ```
 
 ## 05 嵌套路由
+
 局部页面切换
+
 ```jsx
 <Route path="/" element={<App/>}>
     <Route path="expenses" element={<Expenses/>}/>
@@ -55,4 +57,18 @@ App中添加
 ```jsx
 <Outlet/>
 ```
+
 ## 06 发票列表
+
+## 07 "无匹配"路由
+
+```jsx
+<Route
+    path="*"
+    element={
+        <main style={{padding: "1rem"}}>
+            <p>There's nothing here!</p>
+        </main>
+    }
+/>
+```
