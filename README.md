@@ -74,7 +74,9 @@ App中添加
 ```
 
 ## 08 读取URL参数
+
 #### 1. 控制
+
 ```jsx
 <Link
     style={{display: "block", margin: "1rem 0"}}
@@ -84,13 +86,33 @@ App中添加
     {invoice.name}
 </Link>
 ```
+
 #### 2. 匹配
+
 ```jsx
 <Route path="invoices" element={<Invoices/>}>
     <Route path=":invoiceId" element={<Invoice/>}/>
 </Route>
 ```
+
 #### 3. 读取
+
 ```jsx
 let params = useParams();
+```
+
+## 09 索引路由
+> 具有 index 属性而不是 path。那是因为索引路由共享父组件 path
+```jsx
+<Route path="invoices" element={<Invoices/>}>
+    <Route
+        index
+        element={
+            <main style={{padding: "1rem"}}>
+                <p>Select an invoice</p>
+            </main>
+        }
+    />
+    <Route path=":invoiceId" element={<Invoice/>}/>
+</Route>
 ```
