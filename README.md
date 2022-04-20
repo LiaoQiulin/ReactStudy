@@ -102,7 +102,9 @@ let params = useParams();
 ```
 
 ## 09 索引路由
+
 > 具有 index 属性而不是 path。那是因为索引路由共享父组件 path
+
 ```jsx
 <Route path="invoices" element={<Invoices/>}>
     <Route
@@ -115,4 +117,22 @@ let params = useParams();
     />
     <Route path=":invoiceId" element={<Invoice/>}/>
 </Route>
+```
+
+## 10 活动链接
+> <NavLink className={({ isActive }) => isActive ? "red" : "blue"} />
+```jsx
+<NavLink
+    style={({isActive}) => {
+        return {
+            display: "block",
+            margin: "1rem 0",
+            color: isActive ? "red" : "",
+        };
+    }}
+    to={`/invoices/${invoice.number}`}
+    key={invoice.number}
+>
+    {invoice.name}
+</NavLink>
 ```
