@@ -72,3 +72,25 @@ App中添加
     }
 />
 ```
+
+## 08 读取URL参数
+#### 1. 控制
+```jsx
+<Link
+    style={{display: "block", margin: "1rem 0"}}
+    to={`/invoices/${invoice.number}`}
+    key={invoice.number}
+>
+    {invoice.name}
+</Link>
+```
+#### 2. 匹配
+```jsx
+<Route path="invoices" element={<Invoices/>}>
+    <Route path=":invoiceId" element={<Invoice/>}/>
+</Route>
+```
+#### 3. 读取
+```jsx
+let params = useParams();
+```
