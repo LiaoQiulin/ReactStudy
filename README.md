@@ -168,7 +168,7 @@ let filter = searchParams.get("filter");
 ## 12 自定义行为
 
 ```jsx
-function CustomLink({invoice, ...props}) {
+function InvoiceLink({invoice, ...props}) {
     let location = useLocation();
     let params = useParams();
     let isActive = params.invoiceId === invoice.number.toString();

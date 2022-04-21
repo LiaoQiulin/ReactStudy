@@ -101,7 +101,7 @@ function Invoices() {
                         return name.startsWith(filter.toLowerCase());
                     })
                     .map((invoice) => (
-                        <CustomLink invoice={invoice} key={invoice.number}/>
+                        <InvoiceLink invoice={invoice} key={invoice.number}/>
                     ))}
             </nav>
             <Outlet/>
@@ -109,7 +109,7 @@ function Invoices() {
     );
 }
 
-function CustomLink({invoice, ...props}) {
+function InvoiceLink({invoice, ...props}) {
     let location = useLocation();
     let params = useParams();
     let isActive = params.invoiceId === invoice.number.toString();
