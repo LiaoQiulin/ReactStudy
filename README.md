@@ -140,13 +140,17 @@ let params = useParams();
 ```
 
 ## 11 搜索参数
->  "/login?success=1" or "/shoes?brand=nike&sort=asc&sortby=price"
+
+> "/login?success=1" or "/shoes?brand=nike&sort=asc&sortby=price"
 
 #### 1. 引入
+
 ```jsx
 let [searchParams, setSearchParams] = useSearchParams();
 ```
+
 #### 2. 设置
+
 ```jsx
 if (filter) {
     setSearchParams({filter});
@@ -154,7 +158,29 @@ if (filter) {
     setSearchParams({});
 }
 ```
+
 #### 3. 获取
+
 ```jsx
 let filter = searchParams.get("filter");
+```
+
+## 12 自定义行为
+
+```jsx
+function CustomLink({invoice, ...props}) {
+    let location = useLocation();
+    let params = useParams();
+    let isActive = params.invoiceId === invoice.number.toString();
+    return (
+        <div>
+            <Link
+                style={{color: isActive ? "red" : ""}}
+                to={`/invoices/${invoice.number}` + location.search}
+                {...props}>
+                {invoice.name}
+            </Link>
+        </div>
+    )
+}
 ```
