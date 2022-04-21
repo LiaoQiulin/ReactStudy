@@ -184,3 +184,18 @@ function InvoiceLink({invoice, ...props}) {
     )
 }
 ```
+
+## 13 编程式导航
+```jsx
+let navigate = useNavigate();
+```
+```jsx
+<button
+    style={{color: isActive ? "red" : ""}}
+    {...props}
+    onClick={() => {
+        navigate(`/invoices/${invoice.number}` + location.search)
+    }}>
+    {invoice.name}
+</button>
+```

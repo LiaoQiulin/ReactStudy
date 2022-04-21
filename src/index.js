@@ -10,7 +10,8 @@ import reportWebVitals from './reportWebVitals';
 // import run from './09IndexRoutes'
 // import run from './10ActiveLinks'
 // import run from './11SearchParams'
-import run from './12CustomBehavior'
+// import run from './12CustomBehavior'
+import run from './13NavigatingProgrammatically'
 
 run()
 
