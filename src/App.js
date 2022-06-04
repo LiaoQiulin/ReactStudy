@@ -15,7 +15,7 @@ const LoginPage = React.lazy(() => import('./page/LoginPage'));
 const NoMatchPage = React.lazy(() => import('./page/NoMatchPage'));
 
 function Lazy(props) {
-    return <Suspense fallback={<>Loing</>}>{props.children}</Suspense>
+    return <Suspense fallback={<></>}>{props.children}</Suspense>
 }
 
 export default function App() {
